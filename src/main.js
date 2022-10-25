@@ -56,6 +56,36 @@ const cardNumberPattern = {
   },
 }
 const cardNumberMasked = Imask(cardNumber, cardNumberPattern)
+console.log(cardNumberPattern)
+
+const ccNumber = document.querySelector(".cc-number")
+const ccHolder = document.querySelector(".cc-holder .value")
+const ccExpiration = document.querySelector(".cc-expiration .value")
+const ccSecurity = document.querySelector(".cc-security .value")
+const cardHolder = document.querySelector("#card-holder")
+
+
+const form = document.querySelector('form')
+const addButton = document.querySelector("#add-card")
+addButton.addEventListener("click", (event) => {
+  event.preventDefault()
+  form.reset()
+  alert('Cartão adicionado!')
+})
+
+cardNumber.addEventListener('input',(event)=>{
+  ccNumber.innerHTML = cardNumber.value
+})
+cardHolder.addEventListener('input',(event)=>{
+  ccHolder.innerHTML = cardHolder.value
+})
+expirationDate.addEventListener('input',(event)=>{
+  ccExpiration.innerHTML = expirationDate.value
+})
+securityCode.addEventListener('input',(event)=>{
+  ccSecurity.innerHTML = securityCode.value
+})
+
 
 function setCardType(type) {
   const colors = {
